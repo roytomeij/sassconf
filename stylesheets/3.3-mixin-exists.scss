@@ -1,0 +1,7 @@
+@debug mixin-exists(foo);
+
+@mixin foo {}
+
+@debug mixin-exists(foo);
+
+// Also: function-exists()

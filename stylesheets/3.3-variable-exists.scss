@@ -1,0 +1,9 @@
+// Beware: use variable name without $
+
+@debug variable-exists(foo);
+
+$foo: "bar";
+
+@debug variable-exists(foo);
+
+// Also: global-variable-exists()
