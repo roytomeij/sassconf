@@ -1,0 +1,48 @@
+@-webkit-keyframes fly {
+  10% {
+    top: 10%;
+    left: 2.5%; }
+
+  20% {
+    top: 20%;
+    left: 5%; }
+
+  30% {
+    top: 30%;
+    left: 15%; }
+
+  40% {
+    top: 40%;
+    left: 17.5%; }
+
+  50% {
+    top: 50%;
+    left: 27.5%; }
+
+  60% {
+    top: 60%;
+    left: 47.5%; }
+
+  70% {
+    top: 70%;
+    left: 55%; }
+
+  80% {
+    top: 80%;
+    left: 70%; }
+
+  90% {
+    top: 90%;
+    left: 77.5%; }
+
+  100% {
+    top: 100%;
+    left: 100%; } }
+
+#rocket {
+  position: absolute;
+  margin-left: -50px;
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards; }

@@ -1,0 +1,24 @@
+$breakpoints: (
+  desktop: 1280px,
+  tablet-portrait: 1024px,
+  phone-portrait: 360px
+);
+
+@mixin mq($device) {
+  @if map-has-key($breakpoints, $device) {
+    @media (max-width: map-get($breakpoints, $device)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Breakpoint '#{$device}' doesn't exist!"
+  }
+}
+
+.foo {
+  width: 50%;
+
+  @include mq(tablet-portrait) {
+    width: 100%;
+  }
+}

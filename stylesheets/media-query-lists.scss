@@ -1,0 +1,21 @@
+// TODO: What is a list?
+
+$breakpoints: desktop 1280px, tablet-portrait 1024px, phone-portrait 360px;
+
+@mixin mq($device) {
+  @each $breakpoint in $breakpoints {
+    @if (nth($breakpoint, 1) == $device) {
+      @media (max-width: nth($breakpoint, 2)) {
+        @content;
+      }
+    }
+  }
+}
+
+.foo {
+  width: 50%;
+
+  @include mq(tablet-portrait) {
+    width: 100%;
+  }
+}

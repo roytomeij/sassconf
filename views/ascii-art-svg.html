@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ascii Art Demo (svg)</title>
+    <link href="../stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="../stylesheets/ascii-art-svg.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="no-padding">
+
+    <script>
+      var js = window.getComputedStyle(document.body, '::before').content;
+      eval(js.substring(1, js.length-1));
+    </script>
+
+  </body>
+</html>

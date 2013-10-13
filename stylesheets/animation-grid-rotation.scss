@@ -1,0 +1,71 @@
+$grid: (
+
+"↓                                       ",
+" ↘                                      ",
+"     ↓                                  ",
+"      ↘                                 ",
+"          →                             ",
+"                  →                     ",
+"                       ↘                ",
+"                            →           ",
+"                                    ↑   ",
+"                                    ↑   "
+
+);
+
+$grid-width: str-length(nth($grid, 1));
+$column-width: 100% / $grid-width;
+$row-height: 100% / length($grid);
+
+@function index-of-char($string) {
+  @for $i from 1 through $grid-width {
+    $char: str-slice($string, $i, $i);
+
+    @if $char != ' ' {
+      @return ($i, $char);
+    }
+  }
+
+  @return (0, 0);
+}
+
+@function rotation-of-char($string) {
+  $arrows: (
+    ↑: 0,
+    ↗: 45,
+    →: 90,
+    ↘: 135,
+    ↓: 180,
+    ↙: 225,
+    ←: 270,
+    ↖: 315
+  );
+
+  @return map-get($arrows, $string);
+}
+
+@-webkit-keyframes fly {
+  $i: 1;
+
+  @each $row in $grid {
+    $char: index-of-char(nth($row, 1));
+
+    #{$row-height * $i} {
+      top: $row-height * $i;
+      left: $column-width * nth($char, 1);
+      -webkit-transform: rotate(#{rotation-of-char(nth($char, 2))}deg)
+    }
+
+    $i: $i + 1;
+  }
+}
+
+#rocket {
+  position: absolute;
+  margin: -87.5px 0 0 -50px;
+  -webkit-transform: rotate(180deg);
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+}

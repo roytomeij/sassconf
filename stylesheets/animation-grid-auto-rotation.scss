@@ -1,0 +1,63 @@
+$grid: (
+
+"x                                                           ",
+" x                                                          ",
+"     x                                                      ",
+"      x                                                     ",
+"          x                                                 ",
+"                  x                                         ",
+"                     x                                      ",
+"                           x                                ",
+"                              x                             ",
+"                                x                           ",
+"                                  x                         ",
+"                                     x                      ",
+"                                         x                  ",
+"                                                           x",
+"                                                  x         ",
+"                                               x            ",
+"                                          x                 ",
+"                                      x                     ",
+"                                        x                   ",
+"                                                 x          "
+
+);
+
+$grid-width: str-length(nth($grid, 1));
+$column-width: 100% / $grid-width;
+$row-height: 100% / length($grid);
+
+@function angle($old, $new) {
+  $steepness: (($new - $old) / $grid-width) * 100;
+  $angle: 180 - (0.9 * $steepness);
+
+  @return $angle;
+}
+
+@-webkit-keyframes fly {
+  $i: 1;
+  $prev-position: 0;
+
+  @each $row in $grid {
+    $position: str-index(nth($row, 1), 'x');
+    $angle: angle($prev-position, $position);
+    $prev-position: $position;
+
+    #{$row-height * $i} {
+      top: $row-height * $i;
+      left: $column-width * $position;
+      -webkit-transform: rotate(#{$angle}deg)
+    }
+
+    $i: $i + 1;
+  }
+}
+
+#rocket {
+  position: absolute;
+  margin: -87.5px 0 0 -50px;
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+}

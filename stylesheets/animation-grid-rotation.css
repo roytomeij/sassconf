@@ -1,0 +1,59 @@
+@-webkit-keyframes fly {
+  10% {
+    top: 10%;
+    left: 2.5%;
+    -webkit-transform: rotate(180deg); }
+
+  20% {
+    top: 20%;
+    left: 5%;
+    -webkit-transform: rotate(135deg); }
+
+  30% {
+    top: 30%;
+    left: 15%;
+    -webkit-transform: rotate(180deg); }
+
+  40% {
+    top: 40%;
+    left: 17.5%;
+    -webkit-transform: rotate(135deg); }
+
+  50% {
+    top: 50%;
+    left: 27.5%;
+    -webkit-transform: rotate(90deg); }
+
+  60% {
+    top: 60%;
+    left: 47.5%;
+    -webkit-transform: rotate(90deg); }
+
+  70% {
+    top: 70%;
+    left: 60%;
+    -webkit-transform: rotate(135deg); }
+
+  80% {
+    top: 80%;
+    left: 72.5%;
+    -webkit-transform: rotate(90deg); }
+
+  90% {
+    top: 90%;
+    left: 92.5%;
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    top: 100%;
+    left: 92.5%;
+    -webkit-transform: rotate(0deg); } }
+
+#rocket {
+  position: absolute;
+  margin: -87.5px 0 0 -50px;
+  -webkit-transform: rotate(180deg);
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards; }

@@ -1,0 +1,42 @@
+$grid: (
+
+"x                                       ",
+" x                                      ",
+"     x                                  ",
+"      x                                 ",
+"          x                             ",
+"                  x                     ",
+"                     x                  ",
+"                           x            ",
+"                              x         ",
+"                                       x"
+
+);
+
+$grid-width: str-length(nth($grid, 1));
+$column-width: 100% / $grid-width;
+$row-height: 100% / length($grid);
+
+@-webkit-keyframes fly {
+  $i: 1;
+
+  @each $row in $grid {
+    $position: str-index(nth($row, 1), 'x');
+
+    #{$row-height * $i} {
+      top: $row-height * $i;
+      left: $column-width * $position;
+    }
+
+    $i: $i + 1;
+  }
+}
+
+#rocket {
+  position: absolute;
+  margin-left: -50px;
+  -webkit-animation-name: fly;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+}
