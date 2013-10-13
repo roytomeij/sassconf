@@ -1,9 +1,10 @@
 $breakpoints: desktop 1280px, tablet-portrait 1024px, phone-portrait 360px;
 
 @mixin mq($device) {
-  @each $breakpoint in $breakpoints {
-    @if (nth($breakpoint, 1) == $device) {
-      @media (max-width: nth($breakpoint, 2)) {
+  // Multiple assignment
+  @each $name, $breakpoint in $breakpoints {
+    @if ($name == $device) {
+      @media (max-width: $breakpoint) {
         @content;
       }
     }

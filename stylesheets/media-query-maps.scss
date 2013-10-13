@@ -11,6 +11,7 @@ $breakpoints: (
     }
   }
   @else {
+    // Can be used thanks to map-has-key() instead of loop
     @warn "Breakpoint '#{$device}' doesn't exist!"
   }
 }

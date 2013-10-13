@@ -1,0 +1,23 @@
+$breakpoints: (
+  desktop: 1280px,
+  tablet-portrait: 1024px,
+  phone-portrait: 360px
+);
+
+@mixin mq($device) {
+  @each $name, $breakpoint in $breakpoints {
+    @if ($name == $device) {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+.foo {
+  width: 50%;
+
+  @include mq(tablet-portrait) {
+    width: 100%;
+  }
+}

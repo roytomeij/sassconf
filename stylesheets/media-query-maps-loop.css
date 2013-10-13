@@ -1,0 +1,5 @@
+.foo {
+  width: 50%; }
+  @media (max-width: 1024px) {
+    .foo {
+      width: 100%; } }
