@@ -1,0 +1,23 @@
+// Handy when using Smacss, BEM, etc.
+
+.block {
+  color: red;
+
+  @at-root #{&}__element {
+    color: green;
+  }
+}
+
+.block {
+  color: red;
+
+  @at-root {
+    #{&}__element {
+      color: green;
+    }
+
+    #{&}--modifier {
+      color: blue;
+    }
+  }
+}

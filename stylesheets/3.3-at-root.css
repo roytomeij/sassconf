@@ -1,0 +1,11 @@
+.block {
+  color: red; }
+  .block__element {
+    color: green; }
+
+.block {
+  color: red; }
+  .block__element {
+    color: green; }
+  .block--modifier {
+    color: blue; }
