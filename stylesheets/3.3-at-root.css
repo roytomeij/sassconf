@@ -1,11 +1,63 @@
-.block {
-  color: red; }
-  .block__element {
-    color: green; }
+/*
+Syntax error: Invalid CSS after "  @at-root #{": expected expression (e.g. 1px, bold), was "&}__element {"
+        on line 8 of stylesheets/3.3-at-root.scss
 
-.block {
-  color: red; }
-  .block__element {
-    color: green; }
-  .block--modifier {
-    color: blue; }
+3: // #{&} was valid in 3.3.0.rc.1, not in 3.3.0.rc.3!
+4: 
+5: .block {
+6:   color: red;
+7: 
+8:   @at-root #{&}__element {
+9:     color: green;
+10:   }
+11: }
+12: 
+13: .block {
+
+Backtrace:
+stylesheets/3.3-at-root.scss:8
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:1306:in `expected'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/script/lexer.rb:216:in `expected!'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/script/parser.rb:571:in `assert_expr'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/script/parser.rb:42:in `parse_interpolated'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:1170:in `sass_script'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:1083:in `interpolation'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:1110:in `interp_ident'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:848:in `qualified_name'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:837:in `element_name'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:781:in `simple_selector_sequence'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:747:in `_selector'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:722:in `selector'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:705:in `selector_sequence'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:627:in `ruleset'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:515:in `at_root_directive'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:216:in `special_directive'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:188:in `directive'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:655:in `block_child'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:647:in `block_contents'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:636:in `block'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:629:in `ruleset'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:654:in `block_child'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:644:in `block_contents'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:116:in `stylesheet'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/scss/parser.rb:41:in `parse'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/engine.rb:409:in `_to_tree'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/engine.rb:274:in `render'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin/compiler.rb:359:in `update_stylesheet'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin/compiler.rb:190:in `block in update_stylesheets'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin/compiler.rb:187:in `each'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin/compiler.rb:187:in `update_stylesheets'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin/compiler.rb:222:in `watch'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/plugin.rb:108:in `method_missing'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/exec.rb:509:in `watch_or_update'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/exec.rb:346:in `process_result'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/exec.rb:43:in `parse'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/lib/sass/exec.rb:22:in `parse!'
+/Users/roy/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.3/bin/sass:13:in `<top (required)>'
+/Users/roy/.rbenv/versions/2.0.0-p353/bin/sass:23:in `load'
+/Users/roy/.rbenv/versions/2.0.0-p353/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"  @at-root #{\": expected expression (e.g. 1px, bold), was \"&}__element {\"\A         on line 8 of stylesheets/3.3-at-root.scss\A \A 3: // #{&} was valid in 3.3.0.rc.1, not in 3.3.0.rc.3!\A 4: \A 5: .block {\A 6:   color: red;\A 7: \A 8:   @at-root #{&}__element {\A 9:     color: green;\A 10:   }\A 11: }\A 12: \A 13: .block {"; }

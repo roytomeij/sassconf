@@ -1,5 +1,7 @@
 // Handy when using Smacss, BEM, etc.
 
+// #{&} was valid in 3.3.0.rc.1, not in 3.3.0.rc.3!
+
 .block {
   color: red;
 
